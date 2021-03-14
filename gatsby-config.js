@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     title: "Kavanet.io",
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 };
