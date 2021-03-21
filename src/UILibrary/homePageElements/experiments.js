@@ -3,7 +3,7 @@ import { Card, HomeSection } from "..";
 
 const Gallery = ({ bgColour }) => {
   const number = [
-    { title: "First Thing", desc: "First Desc" },
+    { title: "Dots", desc: "Connecting Dots Experiment", link: "/dots" },
     { title: "Second Thing", desc: "Second Desc" },
   ];
 
@@ -18,7 +18,13 @@ const Gallery = ({ bgColour }) => {
 
         <div className="flex flex-grow flex-row flex-wrap justify-around">
           {number.map((numbers) => {
-            return <Card title={numbers.title} desc={numbers.desc} />;
+            return (
+              <Card
+                title={numbers.title}
+                desc={numbers.desc}
+                link={numbers.link}
+              />
+            );
           })}
         </div>
       </HomeSection>

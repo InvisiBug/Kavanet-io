@@ -5,8 +5,8 @@ const Site = () => {
   return (
     <>
       <Layout>
-        <Gallery />
         <Experiments bgColour={"bg-indigo-500"} />
+        <Gallery bgColour={"bg-green-300"} />
       </Layout>
     </>
   );

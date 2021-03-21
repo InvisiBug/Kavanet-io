@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, HomeSection } from "..";
 
-const Gallery = () => {
+const Gallery = ({ bgColour }) => {
   const number = [
     { title: "First Thing", desc: "First Desc" },
     { title: "Second Thing", desc: "Second Desc" },
@@ -9,7 +9,7 @@ const Gallery = () => {
 
   return (
     <>
-      <HomeSection className="bg-green-300">
+      <HomeSection className={bgColour}>
         <h1 className="text-5xl text-center text-primary">Gallery</h1>
 
         <div className="flex flex-grow flex-row flex-wrap justify-around">
