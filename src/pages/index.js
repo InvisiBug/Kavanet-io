@@ -6,7 +6,7 @@ const Site = () => {
     <>
       <Layout>
         <Gallery />
-        <Experiments />
+        <Experiments bgColour={"bg-indigo-500"} />
       </Layout>
     </>
   );

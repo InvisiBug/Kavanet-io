@@ -4,7 +4,7 @@ const card = ({ title, desc }) => {
   return (
     <>
       <div className="h-80 w-60 m-10">
-        <div className="flex flex-col w-full h-full overflow-hidden rounded border bg-white shadow border-black">
+        <div className="flex flex-col w-full h-full rounded border bg-white shadow border-black">
           <div
             className="flex-grow h-1/2 h-47 bg-cover bg-no-repeat bg-center"
             style={{

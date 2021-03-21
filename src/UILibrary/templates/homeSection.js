@@ -1,9 +1,11 @@
 import React from "react";
 
-const HomeSection = () => {
+const HomeSection = ({ children, className }) => {
   return (
     <>
-      <h1>boop</h1>
+      <div className={`flex flex-col ${className} my-5 mx-40 rounded-lg`}>
+        {children}
+      </div>
     </>
   );
 };
