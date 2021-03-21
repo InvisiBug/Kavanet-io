@@ -16,8 +16,6 @@ const Dots = () => {
       canvas.width = wrapper.clientWidth;
       canvas.height = wrapper.clientHeight;
 
-      console.log(ctx);
-
       var stars = []; // Array that contains the stars
       // var total = (canvas.width * canvas.height) / 20000; // Number of stars
       var total = 75;
@@ -95,21 +93,13 @@ const Dots = () => {
   return (
     <>
       <div className="flex h-full">
-        <div className=" bg-green-400 w-20">hello </div>
-        <div ref={wrapperRef} className=" flex-grow bg-black">
+        <div className="bg-green-400 w-20">hello</div>
+        <div ref={wrapperRef} className=" flex-grow bg-gray-700">
           <canvas ref={canvasRef} />
         </div>
       </div>
     </>
   );
-
-  // return (
-  //   <>
-  //     <div ref={wrapperRef} className="w-full h-full bg-gray-700">
-  //       <canvas ref={canvasRef} />
-  //     </div>
-  //   </>
-  // );
 };
 
 export default Dots;

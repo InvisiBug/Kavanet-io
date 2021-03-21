@@ -3,7 +3,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     textColor: {
-      primary: "#fff",
+      primary: "#000",
+      nav: "#fff",
     },
     extend: { textColor: ["primary"] },
   },

@@ -1,11 +1,12 @@
 import React from "react";
-import { Layout, Gallery } from "../components";
+import { Layout, Experiments, Gallery } from "../UILibrary/";
 
 const Site = () => {
   return (
     <>
       <Layout>
         <Gallery />
+        <Experiments />
       </Layout>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Dots from "../experiments/dots";
-import { Layout } from "../components";
+import { Layout } from "../UILibrary";
 
 const dots = () => {
   return (
