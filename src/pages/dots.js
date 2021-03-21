@@ -1,12 +1,15 @@
 import React from "react";
+import Dots from "../experiments/dots";
 import { Layout } from "../components";
 
-const Dots = () => {
+const dots = () => {
   return (
     <>
-      <Layout>hello</Layout>
+      <Layout>
+        <Dots />
+      </Layout>
     </>
   );
 };
 
-export default Dots;
+export default dots;
