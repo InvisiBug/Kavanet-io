@@ -1,13 +1,13 @@
 import React from "react";
-import { Layout, Experiments, Gallery } from "../UILibrary/";
+import { HomeScreenLayout, Experiments, Gallery } from "../UILibrary/";
 
 const Site = () => {
   return (
     <>
-      <Layout>
+      <HomeScreenLayout>
         <Experiments bgColour={"bg-indigo-500"} />
         <Gallery bgColour={"bg-green-300"} />
-      </Layout>
+      </HomeScreenLayout>
     </>
   );
 };
