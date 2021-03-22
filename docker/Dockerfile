@@ -65,14 +65,14 @@ COPY --from=build /app/public /usr/share/nginx/html
 # # COPY --chown=node:node package-lock.json package.json ./
 # # RUN gatsby build
 
-# WORKDIR /app 
-# RUN npm install -g gatsby-cli
-# COPY package*.json ./ 
-# RUN npm install
-# COPY . ./
-# RUN gatsby build
+# # WORKDIR /app 
+# # RUN npm install -g gatsby-cli
+# # COPY package*.json ./ 
+# # RUN npm install
+# # COPY . ./
+# # RUN gatsby build
 
-# Pull down nginx-alpine image
+# # Pull down nginx-alpine image
 # FROM nginx:stable-alpine
 
 # # Copy built directory to nginx folder

@@ -13,7 +13,9 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "dev": "gatsby develop"
+    "dev": "gatsby develop",
+    "pu": "docker-compose -f docker/docker-compose.yaml up -d --build",
+    "pd": "docker-compose -f docker/docker-compose.yaml down"
   },
   "dependencies": {
     "gatsby": "^3.0.1",
