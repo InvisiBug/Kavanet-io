@@ -14,7 +14,13 @@ const Gallery = ({ bgColour }) => {
 
         <div className="flex flex-grow flex-row flex-wrap justify-around">
           {number.map((numbers) => {
-            return <Card title={numbers.title} desc={numbers.desc} />;
+            return (
+              <Card
+                title={numbers.title}
+                desc={numbers.desc}
+                key={numbers.title}
+              />
+            );
           })}
         </div>
       </HomeSection>

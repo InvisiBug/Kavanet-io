@@ -23,6 +23,7 @@ const Gallery = ({ bgColour }) => {
                 title={numbers.title}
                 desc={numbers.desc}
                 link={numbers.link}
+                key={numbers.title}
               />
             );
           })}

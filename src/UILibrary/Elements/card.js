@@ -5,7 +5,7 @@ const card = ({
   title,
   desc,
   url = "https://images.dog.ceo/breeds/finnish-lapphund/mochilamvan.jpg",
-  link,
+  link = "/",
 }) => {
   return (
     <>
@@ -15,7 +15,7 @@ const card = ({
             <div
               className="flex-grow bg-cover bg-no-repeat bg-center"
               style={{
-                "background-image": `url(${url})`,
+                backgroundImage: `url(${url})`,
               }}
             ></div>
 

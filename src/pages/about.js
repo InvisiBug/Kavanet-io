@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "../UILibrary";
 
-const AboutPage = () => {
+const about = () => {
   return (
     <>
       <Layout>
@@ -11,4 +11,5 @@ const AboutPage = () => {
     </>
   );
 };
-export default AboutPage;
+
+export default about;
