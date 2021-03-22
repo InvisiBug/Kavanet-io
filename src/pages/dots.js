@@ -1,13 +1,13 @@
 import React from "react";
 import Dots from "../experiments/dots";
-import { Layout } from "../UILibrary";
+import { ExperimentsLayout } from "../UILibrary";
 
 const dots = () => {
   return (
     <>
-      <Layout>
+      <ExperimentsLayout>
         <Dots />
-      </Layout>
+      </ExperimentsLayout>
     </>
   );
 };

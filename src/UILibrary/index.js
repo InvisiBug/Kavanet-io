@@ -10,4 +10,10 @@ export { default as Gallery } from "./homePageElements/gallery";
 
 // Templates
 export { default as HomeSection } from "./templates/homeSection";
+
+export { default as GuideTemplate } from "./templates/guide";
+
+// Layouts
 export { default as Layout } from "./templates/Layout";
+export { default as HomeScreenLayout } from "./Layouts/homeScreen";
+export { default as ExperimentsLayout } from "./Layouts/experiments";

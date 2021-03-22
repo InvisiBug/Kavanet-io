@@ -20,8 +20,8 @@ const card = ({
             ></div>
 
             <div className="p-3 border">
-              <h1 className="mr-10 text-lg ">{title}</h1>
-              <p className="text-xs text-gray-500">{desc}</p>
+              <h1 className="mr-10 text-2xl ">{title}</h1>
+              <p className="text-m text-gray-500">{desc}</p>
             </div>
           </div>
         </Link>
