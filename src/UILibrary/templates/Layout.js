@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <div className="h-full">
         <Header />
 
-        <main className="flex-grow overflow-y-auto  bg-red-200">
+        <main className="flex-grow overflow-y-auto bg-blue-500">
           {children}
         </main>
       </div>

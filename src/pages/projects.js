@@ -1,7 +1,8 @@
 import React from "react";
+import { LandingNavBar } from "../UILibrary";
 import Nav2 from "../UILibrary/nav2";
 
-const Index = () => {
+const Me = () => {
   return (
     <>
       <div className="bg-gray-700 overflow-hidden h-screen">
@@ -29,11 +30,4 @@ const Index = () => {
   );
 };
 
-export default Index;
-
-{
-  /* <HomeScreenLayout>
-        <Experiments bgColour={"bg-indigo-500"} />
-        <Gallery bgColour={"bg-green-300"} />
-      </HomeScreenLayout> */
-}
+export default Me;

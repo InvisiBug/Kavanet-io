@@ -13,7 +13,7 @@ const Gallery = ({ bgColour }) => {
 
   return (
     <>
-      <HomeSection className="bg-gradient-to-tr from-yellow-500  to-yellow-400">
+      <HomeSection className="bg-gradient-to-tr from-yellow-500  to-yellow-400 shadow-xl">
         <h1 className="text-5xl text-center text-primary">Experiments</h1>
 
         <div className="flex flex-grow flex-row flex-wrap justify-around">

@@ -1,16 +1,16 @@
 import React from "react";
-import { Header, Footer } from "../index";
+import { Navbar, Footer } from "../index";
 
 const HomeScreenLayout = ({ children }) => {
   return (
     <div className="flex flex-col h-screen">
-      <Header />
+      <Navbar />
 
-      <main className="flex-grow overflow-y-auto content-center  bg-red-200">
+      <main className="flex-grow overflow-y-auto content-center">
         {children}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
