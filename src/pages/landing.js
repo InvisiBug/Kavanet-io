@@ -1,20 +1,24 @@
 import React from "react";
 import { LandingNavBar } from "../UILibrary";
 import Nav2 from "../UILibrary/nav2";
+import bg1 from "../images/bg1.png";
 
 const Landing = () => {
   return (
     <>
       <div className="bg-gray-700 overflow-hidden h-screen">
         <img
-          src="https://blendswap.com/static/blendImages/2016/10/12/Blend/86275/54a27662881ee2087381e8c6f19a9922.jpg"
+          // src="https://blendswap.com/static/blendImages/2016/10/12/Blend/86275/54a27662881ee2087381e8c6f19a9922.jpg"
+          src={bg1}
           className="absolute h-full w-full object-cover"
         />
+        {/* <div className="inset-0 absolute bg-gradient-to-r from-gray-100 to-transparent"></div> */}
         <div className="inset-0 bg-black opacity-20 absolute" />
+        {/* <div className="inset-0 bg-gradient-to-r from-gray-400 to-blue-500 opacity-20 absolute" /> */}
         <Nav2 />
-        <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
+        <div className="container mx-auto h-full relative z-10 flex items-center">
           <div className="w-full flex flex-col items-center relative z-10">
-            <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 ">
+            <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 text-shadow-lg">
               Kavanet.io
             </h1>
             <a
