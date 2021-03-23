@@ -1,6 +1,6 @@
 import React from "react";
-import { LandingNavBar } from "../UILibrary";
-import Nav2 from "../UILibrary/nav2";
+
+import { NavBar } from "../UILibrary";
 
 const Me = () => {
   return (
@@ -11,7 +11,7 @@ const Me = () => {
           className="absolute h-full w-full object-cover"
         />
         <div className="inset-0 bg-black opacity-20 absolute" />
-        <Nav2 />
+        <NavBar />
         <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center py-32 xl:py-40">
           <div className="w-full flex flex-col items-center relative z-10">
             <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 ">
