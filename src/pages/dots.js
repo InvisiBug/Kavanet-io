@@ -1,15 +1,22 @@
 import React from "react";
 import Dots from "../experiments/dots";
-import { ExperimentsLayout } from "../UILibrary";
+import { NavBar } from "../lib";
+// import { ExperimentsLayout } from "../lib";
 
 const dots = () => {
   return (
     <>
-      <ExperimentsLayout>
+      <div className="bg-gray-800 h-screen">
+        <NavBar />
         <Dots />
-      </ExperimentsLayout>
+      </div>
     </>
   );
 };
 
 export default dots;
+
+// <div className="bg-gray-700 inset-0 absolute">
+//         <div className="bg-white mx-10 my-10 w-full h-10"></div>
+//         {/* <Dots /> */}
+//       </div>

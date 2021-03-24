@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar } from "../UILibrary";
+import { NavBar } from "../lib";
 
 const Me = () => {
   return (

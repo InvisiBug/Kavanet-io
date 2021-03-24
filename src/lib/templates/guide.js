@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "../";
+import { Layout } from "..";
 import { MDXProvider } from "@mdx-js/react";
 
 const MyH1 = (props) => <h1 className="bg-gray-200 h-full" {...props} />;

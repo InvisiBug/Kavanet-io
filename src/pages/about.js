@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "../UILibrary";
+import { Layout } from "../lib";
 
 const about = () => {
   return (

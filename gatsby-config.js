@@ -22,8 +22,8 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`, // Used to parse the markdown
       options: {
         defaultLayouts: {
-          guides: require.resolve("./src/UILibrary/templates/guide.js"), // Set a specific filesystem to a specific layout
-          default: require.resolve("./src/UILibrary/templates/guide.js"), // Set all others to a default layout
+          guides: require.resolve("./src/lib/templates/guide.js"), // Set a specific filesystem to a specific layout
+          default: require.resolve("./src/lib/templates/guide.js"), // Set all others to a default layout
         },
       },
     },

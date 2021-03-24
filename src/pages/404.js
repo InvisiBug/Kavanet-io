@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, navigate } from "gatsby";
-import { NavBar, NavButton } from "../UILibrary";
+import { NavBar, NavButton } from "../lib";
 import bg1 from "../images/bg1.png";
 
 const Index = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { LandingNavBar, NavBar } from "../UILibrary";
+import { LandingNavBar, NavBar } from "../lib";
 
 import bg1 from "../images/bg1.png";
 
@@ -16,8 +16,8 @@ const Landing = () => {
         <div className="inset-0 bg-black opacity-20 absolute" />
         {/* <div className="inset-0 bg-gradient-to-r from-gray-400 to-blue-500 opacity-20 absolute" /> */}
         <NavBar />
-        <div className="container mx-auto h-full relative z-10 flex items-center">
-          <div className="w-full flex flex-col items-center relative z-10">
+        <div className="container mx-auto h-full relative z-10 flex items-center ">
+          <div className="w-full flex flex-col items-center relative z-10 ">
             <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 text-shadow-lg">
               Kavanet.io
             </h1>
