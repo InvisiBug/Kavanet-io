@@ -88,7 +88,7 @@ const Dots = () => {
       }
       start();
     }
-  }, []);
+  });
 
   return (
     <>

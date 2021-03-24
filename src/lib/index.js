@@ -13,5 +13,4 @@ export { default as GuideTemplate } from "./templates/guide";
 export { default as PlaceHolder } from "./templates/placeHolder";
 
 // Layouts
-export { default as HomeScreenLayout } from "./Layouts/homeScreen";
 export { default as ExperimentsLayout } from "./Layouts/experiments";

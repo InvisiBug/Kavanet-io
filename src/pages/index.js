@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
-import { NavBar, NavButton } from "../lib";
+import { NavBar } from "../lib";
 import bg1 from "../images/bg1.png";
 
 const Index = () => {
   return (
     <>
       <div className="bg-gray-700 overflow-hidden h-screen">
-        <img src={bg1} className="absolute h-full w-full object-cover" />
+        <img
+          src={bg1}
+          alt="index"
+          className="absolute h-full w-full object-cover"
+        />
         <div className="inset-0 bg-black opacity-20 absolute" />
         <header>
           <NavBar />
@@ -19,7 +23,7 @@ const Index = () => {
             </h1>
             <Link
               to="/me"
-              className="block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase mt-10 rounded-lg shadow"
+              className="bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase mt-10 rounded-lg shadow"
             >
               Enter
             </Link>
@@ -31,10 +35,3 @@ const Index = () => {
 };
 
 export default Index;
-
-{
-  /* <HomeScreenLayout>
-        <Experiments bgColour={"bg-indigo-500"} />
-        <Gallery bgColour={"bg-green-300"} />
-      </HomeScreenLayout> */
-}

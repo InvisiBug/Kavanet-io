@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React from "react";
 // import { Layout } from "../components";
 // import { Stage, Sprite } from "@inlet/react-pixi";
 

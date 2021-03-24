@@ -1,13 +1,17 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
-import { NavBar, NavButton } from "../lib";
+import { Link } from "gatsby";
+import { NavBar } from "../lib";
 import bg1 from "../images/bg1.png";
 
 const Index = () => {
   return (
     <>
       <div className="bg-gray-700 overflow-hidden h-screen">
-        <img src={bg1} className="absolute h-full w-full object-cover" />
+        <img
+          src={bg1}
+          alt="1"
+          className="absolute h-full w-full object-cover"
+        />
         <div className="inset-0 bg-black opacity-20 absolute" />
 
         <NavBar />
