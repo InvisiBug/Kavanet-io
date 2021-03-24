@@ -9,8 +9,9 @@ const Index = () => {
       <div className="bg-gray-700 overflow-hidden h-screen">
         <img src={bg1} className="absolute h-full w-full object-cover" />
         <div className="inset-0 bg-black opacity-20 absolute" />
-
-        <NavBar />
+        <header>
+          <NavBar />
+        </header>
         <div className="container mx-auto h-full relative z-10 flex items-center">
           <div className="w-full flex flex-col items-center relative z-10">
             <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 text-shadow-lg">

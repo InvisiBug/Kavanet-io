@@ -2,7 +2,7 @@
 export { default as Card } from "./Elements/card";
 export { default as NavButton } from "./Elements/newNavButton";
 export { default as Footer } from "./Elements/footer";
-export { default as Header } from "./Elements/header";
+// export { default as Header } from "./Elements/header";
 
 export { default as NavBar } from "./Elements/nav2";
 

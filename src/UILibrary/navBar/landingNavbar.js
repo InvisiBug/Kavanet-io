@@ -1,5 +1,5 @@
 import React from "react";
-import { NavButton, NavButton } from "..";
+import { NavButton } from "..";
 
 const NavBar = () => {
   return (
