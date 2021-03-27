@@ -12,6 +12,8 @@ const Dots = () => {
       const { current: wrapper } = wrapperRef; // wrapperRef object has a current property, this extracts is and saves result to "wrapper"
       const { current: canvas } = canvasRef;
 
+      console.log("wrapper", wrapper, "canvas", canvas);
+
       const ctx = canvas.getContext("2d");
       canvas.width = wrapper.clientWidth;
       canvas.height = wrapper.clientHeight;
@@ -88,13 +90,13 @@ const Dots = () => {
       }
       start();
     }
-  }, []);
+  });
 
   return (
     <>
       <div className="flex h-full">
-        <div className="bg-green-400 w-20">hello</div>
-        <div ref={wrapperRef} className=" flex-grow bg-gray-700">
+        {/* <div className="bg-green-400 hidden sm:flex md:w-10">hello</div> */}
+        <div ref={wrapperRef} className=" flex-grow bg-gray-700 no-scrollbar">
           <canvas ref={canvasRef} />
         </div>
       </div>

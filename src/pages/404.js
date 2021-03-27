@@ -1,54 +1,36 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import { NavBar } from "../lib";
+import bg1 from "../images/bg1.png";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
-const NotFoundPage = () => {
+const Index = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <>
+      <div className="bg-gray-700 overflow-hidden h-screen">
+        <img
+          src={bg1}
+          alt="1"
+          className="absolute h-full w-full object-cover"
+        />
+        <div className="inset-0 bg-black opacity-20 absolute" />
 
-export default NotFoundPage
+        <NavBar />
+        <div className="container mx-auto h-full relative z-10 flex items-center">
+          <div className="w-full flex flex-col items-center relative z-10">
+            <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-white leading-tight mt-4 text-shadow-lg">
+              Page not found
+            </h1>
+            <Link
+              to="/"
+              className="block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase mt-10 rounded-lg shadow"
+            >
+              Go Back
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Index;
