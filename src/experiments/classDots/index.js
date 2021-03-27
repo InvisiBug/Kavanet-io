@@ -14,17 +14,17 @@ const ClassDots = () => {
   });
 
   const start = () => {
-    const dots = new Dots(wrapperRef, canvasRef, 500, 40);
+    const dots = new Dots(wrapperRef, canvasRef, 40);
     dots.init();
   };
 
   return (
     <>
-      <div className="flex h-full">
+      <div className="absolute h-full w-full ">
         <div
           ref={wrapperRef}
-          className=" flex-grow no-scrollbar"
-          /*onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}*/
+          className=" h-full w-full no-scrollbar"
+          // onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}
         >
           <canvas ref={canvasRef} />
         </div>

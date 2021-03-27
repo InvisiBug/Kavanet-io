@@ -12,7 +12,7 @@ const Index = () => {
           alt="index"
           className="absolute h-full w-full object-cover"
         />
-        <div className="inset-0 bg-black opacity-20 absolute" />
+        <div className="inset-0 bg-black opacity-10 absolute" />
         <header>
           <NavBar />
         </header>
@@ -22,7 +22,7 @@ const Index = () => {
               Kavanet.io
             </h1>
             <Link
-              to="/me"
+              to="/home"
               className="bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase mt-10 rounded-lg shadow"
             >
               Enter

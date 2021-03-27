@@ -17,7 +17,8 @@ export default class dots {
 
   stars = [];
 
-  constructor(wrapperRef, canvasRef, numberOfStars, speed) {
+  // Number of stars now comes from the container size
+  constructor(wrapperRef, canvasRef, speed) {
     this.canvas = canvasRef.current;
     this.canvasRef = canvasRef;
 
