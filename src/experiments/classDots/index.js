@@ -1,5 +1,4 @@
 import React, { useRef, useLayoutEffect } from "react";
-// import { distance } from "./helpers";
 import Dots from "./dots";
 
 const ClassDots = () => {
@@ -7,14 +6,26 @@ const ClassDots = () => {
   const canvasRef = useRef(null);
 
   useLayoutEffect(() => {
-    const dots = new Dots(canvasRef, wrapperRef);
+    // not happy with this section
+    start();
+    window.addEventListener("resize", () => {
+      start();
+    });
   });
+
+  const start = () => {
+    const dots = new Dots(wrapperRef, canvasRef, 500, 40);
+    dots.init();
+  };
 
   return (
     <>
       <div className="flex h-full">
-        {/* <div className="bg-green-400 hidden sm:flex md:w-10">hello</div> */}
-        <div ref={wrapperRef} className=" flex-grow bg-gray-700 no-scrollbar">
+        <div
+          ref={wrapperRef}
+          className=" flex-grow no-scrollbar"
+          /*onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}*/
+        >
           <canvas ref={canvasRef} />
         </div>
       </div>

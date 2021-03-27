@@ -13,8 +13,11 @@ const NavBar = () => {
           <div className="flex justify-around ">
             <NavButton to="/projects">Projects</NavButton>
             <NavButton to="/experiments">Experiments</NavButton>
+            <NavButton to="/classDots">Dots</NavButton>
           </div>
+
           <div className="flex justify-around ">
+            <NavButton to="/me">Me</NavButton>
             <NavButton to="/me">Me</NavButton>
           </div>
         </div>

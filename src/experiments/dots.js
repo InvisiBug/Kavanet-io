@@ -12,6 +12,8 @@ const Dots = () => {
       const { current: wrapper } = wrapperRef; // wrapperRef object has a current property, this extracts is and saves result to "wrapper"
       const { current: canvas } = canvasRef;
 
+      console.log("wrapper", wrapper, "canvas", canvas);
+
       const ctx = canvas.getContext("2d");
       canvas.width = wrapper.clientWidth;
       canvas.height = wrapper.clientHeight;
