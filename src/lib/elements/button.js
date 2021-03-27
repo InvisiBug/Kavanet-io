@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const Button = ({ children, to = "", className = "" }) => {
+const Button = ({ children, to = "", className = "", clickable = "true" }) => {
   return (
     <>
       <Link

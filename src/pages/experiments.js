@@ -1,11 +1,32 @@
 import React from "react";
-import { PlaceHolder } from "../lib";
-import bg2 from "../images/bg2.png";
+import { Page, ItemCard } from "../lib";
+import bg2 from "../images/dots.png";
+import Dots from "../experiments/dots";
+
+const experimentList = [
+  {
+    title: "Dots",
+    image: bg2,
+    to: "/classDots",
+    description:
+      "A class based canvas experiment creating a random starfield with connecting lines",
+  },
+];
 
 const Experiments = () => {
   return (
     <>
-      <PlaceHolder imgSrc={bg2}>Experiments</PlaceHolder>
+      <Page>
+        {experimentList.map((experiment, index) => (
+          <ItemCard
+            title={experiment.title}
+            imgSrc={experiment.image}
+            description={experiment.description}
+            to={experiment.to}
+            key={experiment.index}
+          />
+        ))}
+      </Page>
     </>
   );
 };

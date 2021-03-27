@@ -7,6 +7,7 @@ const ItemCard = ({
   description = "Description",
   buttonText = "Open",
   to = "",
+  readyToShow = "true",
 }) => {
   return (
     <>
@@ -22,7 +23,7 @@ const ItemCard = ({
             </p>
 
             <div className="lg:w-3/4 border-black ">
-              <Button to={to} className="my-5 ">
+              <Button to={to} clickable="false" className="my-5 ">
                 {buttonText}
               </Button>
             </div>
