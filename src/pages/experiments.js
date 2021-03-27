@@ -1,7 +1,7 @@
 import React from "react";
 import { Page, ItemCard } from "../lib";
 import bg2 from "../images/dots.png";
-import Dots from "../experiments/dots";
+import pixi from "../images/bg3.png";
 
 const experimentList = [
   {
@@ -10,6 +10,12 @@ const experimentList = [
     to: "/classDots",
     description:
       "A class based canvas experiment creating a random starfield with connecting lines",
+  },
+  {
+    title: "Pixi",
+    image: pixi,
+    to: "/pixi",
+    description: "My pixi playground",
   },
 ];
 

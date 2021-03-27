@@ -37,6 +37,7 @@ const ItemCard = ({
             <div className="w-full h-full">
               <img
                 src={imgSrc}
+                alt={imgSrc}
                 className="block max-h-64 mx-auto max-w-xs md:max-w-sm rounded-md border-black"
               />
             </div>
