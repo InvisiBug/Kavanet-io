@@ -1,5 +1,5 @@
 import React from "react";
-import Dots from "../experiments/classDots";
+import Dots from "../experiments/dots";
 import { NavBar } from "../lib";
 
 const dots = () => {

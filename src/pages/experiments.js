@@ -7,7 +7,7 @@ const experimentList = [
   {
     title: "Dots",
     image: bg2,
-    to: "/classDots",
+    to: "/dots",
     description:
       "A class based canvas experiment creating a random starfield with connecting lines",
   },

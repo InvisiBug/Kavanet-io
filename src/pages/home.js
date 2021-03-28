@@ -17,7 +17,7 @@ const Home = () => {
               title="Orbit Poi"
               description="My home made led POV poi"
               imgSrc={bg2}
-              to="/classDots"
+              to="/dots"
               readyToShow="false"
             />
             <ItemCard imgSrc={bg2} to="/" />
