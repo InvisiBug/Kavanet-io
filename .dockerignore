@@ -1,3 +1,4 @@
 .git
 .cache
-node_modulesyarn prod-down
+node_modules
+yarn.lock
