@@ -11,8 +11,8 @@ const NavBar = () => {
           </NavButton>
 
           <div className="flex justify-around mr-24">
-            <NavButton to="/projects">Projects</NavButton>
-            <NavButton to="/experiments">Experiments</NavButton>
+            <NavButton to="/projects/projects">Projects</NavButton>
+            <NavButton to="/experiments/experiments">Experiments</NavButton>
             {/* <NavButton to="/classDots">Dots</NavButton> */}
           </div>
 

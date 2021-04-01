@@ -14,8 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "dev": "npm run develop",
-    "pu": "docker-compose -f docker/docker-compose.yaml up -d --build",
-    "pd": "docker-compose -f docker/docker-compose.yaml down"
+    "up": "docker-compose -f docker/docker-compose.yaml up -d --build",
+    "down": "docker-compose -f docker/docker-compose.yaml down"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",

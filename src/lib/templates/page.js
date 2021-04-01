@@ -8,7 +8,9 @@ const Page = ({ imgSrc, children }) => {
     <>
       {/* <div className="flex h-screen items-center content-center"> */}
       <NavBar />
-      <div className="h-full w-full pt-32">{children}</div>
+      <div className="flex container mx-auto h-full w-full pt-32  border-blue-200">
+        {children}
+      </div>
     </>
   );
 };

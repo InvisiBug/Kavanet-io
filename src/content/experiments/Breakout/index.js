@@ -1,12 +1,11 @@
 import React, { useRef, useLayoutEffect } from "react";
-import Dots from "./dots";
+import Breakout from "./BreakoutClass.js";
 
 const ClassDots = () => {
   const wrapperRef = useRef(null);
   const canvasRef = useRef(null);
 
   useLayoutEffect(() => {
-    // not happy with this section
     start();
     window.addEventListener("resize", () => {
       start();
@@ -14,13 +13,12 @@ const ClassDots = () => {
   });
 
   const start = () => {
-    const dots = new Dots(wrapperRef, canvasRef, 40);
-    dots.init();
+    const breakout = new Breakout();
   };
 
   return (
     <>
-      <div className="absolute h-full w-full ">
+      <div className="absolute h-full w-full border-2 border-black">
         <div
           ref={wrapperRef}
           className=" h-full w-full no-scrollbar"
