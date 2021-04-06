@@ -2,7 +2,7 @@ import React from "react";
 import { NavBar } from "../../lib";
 import Breakout from "../../content/experiments/Breakout";
 
-const dots = () => {
+const breakout = () => {
   return (
     <>
       <div className="h-screen">
@@ -17,4 +17,4 @@ const dots = () => {
   );
 };
 
-export default dots;
+export default breakout;

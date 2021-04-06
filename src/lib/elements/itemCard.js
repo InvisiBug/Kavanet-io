@@ -14,7 +14,7 @@ const ItemCard = ({
       <div className="flex w-3/5 mx-auto my-10 justify-center items-center md:max-w-5xl  border-blue-600 shadow-lg rounded-3xl">
         <div className="m-10 w-full flex  items-center  border-pink-500">
           <div className="w-full md:w-7/12  border-green-500">
-            <h1 className="text-6xl font-bebas-neue uppercase font-black  border-black">
+            <h1 className="text-4xl font-bebas-neue uppercase font-black  border-black">
               {title}
             </h1>
 

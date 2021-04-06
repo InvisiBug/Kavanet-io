@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, ItemCard, ThinCard } from "../../lib";
+import { Page, SmallCard } from "../../lib";
 import bg2 from "../../images/dots.png";
 import pixi from "../../images/bg3.png";
 
@@ -17,6 +17,13 @@ const experimentList = [
     to: "/experiments/breakout",
     description: "My breakout game I made a few years ago",
   },
+  {
+    title: "Genart",
+    image: pixi,
+    to: "/experiments/genart",
+    description: "A placeholder for my first lot of genart",
+  },
+
   // {
   //   title: "Pixi",
   //   image: pixi,
@@ -31,7 +38,7 @@ const Experiments = () => {
       <Page>
         {experimentList.map((experiment, index) => (
           <>
-            <ThinCard
+            <SmallCard
               title={experiment.title}
               imgSrc={experiment.image}
               description={experiment.description}
