@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../";
+import { Button } from "..";
 
-const ItemCard = ({
+const LargeCard = ({
   imgSrc,
   title = "Title",
   description = "Description",
@@ -11,10 +11,10 @@ const ItemCard = ({
 }) => {
   return (
     <>
-      <div className="flex w-3/5 mx-auto my-10 justify-center items-center md:max-w-5xl  border-blue-600 shadow-lg rounded-3xl">
-        <div className="m-10 w-full flex  items-center  border-pink-500">
-          <div className="w-full md:w-7/12  border-green-500">
-            <h1 className="text-6xl font-bebas-neue uppercase font-black  border-black">
+      <div className="container flex w-3/5 h-96 mt-10 mx-auto items-center md:max-w-5xl border-2 border-blue-600 shadow-lg rounded-3xl">
+        <div className="flex m-10 items-center border-2 border-pink-500">
+          <div className="md:w-7/12 w-full border-2 border-green-500">
+            <h1 className="text-4xl font-bebas-neue uppercase font-black  border-black">
               {title}
             </h1>
 
@@ -48,4 +48,4 @@ const ItemCard = ({
   );
 };
 
-export default ItemCard;
+export default LargeCard;

@@ -5,7 +5,7 @@ const Button = ({ children, to = "", className = "", clickable = "true" }) => {
   return (
     <>
       <Link
-        className={`${className} flex text-center justify-center w-20 h-10 bg-gray-800 text-white items-center rounded-lg`}
+        className={`${className} mt-0 mb-0 flex justify-center w-20 h-10 bg-gray-800 text-white items-center rounded-lg`}
         to={to}
       >
         {children}

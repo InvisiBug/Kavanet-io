@@ -1,7 +1,8 @@
 // Elements
 export { default as NavButton } from "./elements/navButton";
 export { default as NavBar } from "./elements/navBar";
-export { default as ItemCard } from "./elements/itemCard";
+export { default as LargeCard } from "./elements/largeCard";
+export { default as SmallCard } from "./elements/smallCard";
 export { default as Button } from "./elements/button";
 
 // Templates
@@ -11,4 +12,4 @@ export { default as PlaceHolder } from "./templates/placeHolder";
 export { default as Page } from "./templates/page";
 
 // Layouts
-export { default as ExperimentsLayout } from "./Layouts/experiments";
+export { default as ExperimentsLayout } from "./layouts/experiments";

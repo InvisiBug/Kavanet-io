@@ -3,13 +3,15 @@ import { NavBar } from "..";
 
 // currently making a page template
 
-const Page = ({ imgSrc, children }) => {
+const Page = ({ imgSrc, children, className = "" }) => {
   return (
-    <>
+    <div className={className}>
       {/* <div className="flex h-screen items-center content-center"> */}
       <NavBar />
-      <div className="h-full w-full pt-32">{children}</div>
-    </>
+      <div className="flex flex-wrap container mx-auto md:max-w-5xl h-full w-full pt-32 border-blue-200">
+        {children}
+      </div>
+    </div>
   );
 };
 

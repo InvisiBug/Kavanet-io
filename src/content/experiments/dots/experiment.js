@@ -1,13 +1,22 @@
-export default class dots {
-  containerSize;
+// import random from "canvas-sketch-util/random";
+// import * as dat from "dat.gui";
 
-  canvas;
-  canvasRef;
+// const gui = new dat.GUI();
+// gui.domElement.id = "gui";
 
-  wrapper;
-  wrapperRef;
+var system = {
+  numStars: 50,
+  speed: 40,
+};
+// var f_b = gui.addFolder("Variables");
+// f_b.open();
+// f_b.add(system, "numStars", 0, 100);
+// f_b.add(system, "speed", 30, 100);
 
+export default class Experiment {
   ctx;
+  width;
+  height;
 
   starColour = "white";
   lineColour = "white";
@@ -18,34 +27,29 @@ export default class dots {
   stars = [];
 
   // Number of stars now comes from the container size
-  constructor(wrapperRef, canvasRef, speed) {
-    this.canvas = canvasRef.current;
-    this.canvasRef = canvasRef;
-
-    this.wrapper = wrapperRef.current;
-    this.wrapperRef = wrapperRef;
-
-    this.ctx = this.canvas.getContext("2d");
-
-    this.containerSize = [this.wrapper.clientWidth, this.wrapper.clientHeight];
+  constructor(ctx, width, height, speed = 40) {
+    this.ctx = ctx;
+    this.width = width;
+    this.height = height;
 
     // Make array of stars
-    for (var i = 0; i < this.containerSize[0] * 0.11; i++) {
+    for (var i = 0; i < width * 0.11; i++) {
       this.stars.push({
-        x: Math.random() * this.containerSize[0], // Positions
-        y: Math.random() * this.containerSize[1],
+        x: Math.random() * width, // Positions
+        y: Math.random() * height,
+        // y: random.gaussian(),
 
-        radius: Math.random() * 1 + 1, // Star sizes
+        radius: 2, // Star sizes
+        // radius: Math.abs(random.noise1D(i) * 5),
 
-        vx: Math.floor(Math.random() * speed) - speed / 2, // Star velocities
-        vy: Math.floor(Math.random() * speed) - speed / 2,
+        vx: Math.floor(Math.random() * system.speed) - system.speed / 2, // Star velocities
+        vy: Math.floor(Math.random() * system.speed) - system.speed / 2,
+        // vx: random.noise1D(i) * 100, // Star velocities
+        // vy: random.noise1D(i) * 100,
       });
     }
-  }
 
-  init() {
-    this.resizeCanvas();
-    this.run();
+    this.run(); // Start the simulation
   }
 
   run = () => {
@@ -55,7 +59,7 @@ export default class dots {
   };
 
   draw = () => {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.clearRect(0, 0, this.width, this.height);
 
     this.ctx.globalCompositeOperation = "lighter";
 
@@ -67,11 +71,11 @@ export default class dots {
         this.stars[i].y,
         this.stars[i].radius,
         0,
-        2 * Math.PI
+        Math.PI * 2
       );
-      this.ctx.fill();
       this.ctx.fillStyle = this.starColour;
-      this.ctx.stroke();
+      this.ctx.fill();
+      // this.ctx.stroke();
     }
 
     this.ctx.beginPath();
@@ -100,20 +104,25 @@ export default class dots {
     return Math.sqrt(xs + ys);
   };
 
-  resizeCanvas() {
-    this.canvas.width = this.containerSize[0];
-    this.canvas.height = this.containerSize[1];
-  }
-
   update() {
     for (var i = 0; i < this.stars.length; i++) {
       this.stars[i].x += this.stars[i].vx / 100;
       this.stars[i].y += this.stars[i].vy / 100;
 
-      if (this.stars[i].x < 0 || this.stars[i].x > this.canvas.width)
+      if (this.stars[i].x < 0 || this.stars[i].x > this.width) {
         this.stars[i].vx = -this.stars[i].vx;
-      if (this.stars[i].y < 0 || this.stars[i].y > this.canvas.height)
+      }
+      if (this.stars[i].y < 0 || this.stars[i].y > this.height) {
         this.stars[i].vy = -this.stars[i].vy;
+      }
     }
+
+    // this.stars.forEach(({ x, y, radius, vx, vy }) => {
+
+    //   // console.log(x);
+    // });
+    // console.log("Here");
+
+    // console.log(system.speed);
   }
 }

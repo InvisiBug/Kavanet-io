@@ -20,6 +20,14 @@
     }
   }
 }
+@layer base {
+  #gui {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 250px;
+    left: 90%;
+  }
+}
 
 @responsive {
   .text-shadow {
