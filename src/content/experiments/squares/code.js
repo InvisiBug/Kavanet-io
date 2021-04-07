@@ -2,19 +2,21 @@ import { lerp } from "canvas-sketch-util/math";
 import random from "canvas-sketch-util/random";
 import palettes from "nice-color-palettes";
 
-export const sketch = (ctx, width, height) => {
-  random.setSeed(316599);
-  // random.setSeed(random.getRandomSeed());
+export const code = (ctx, width, height) => {
+  // random.setSeed(316599);
+  // 960143
+  // random.setSeed(526491);
+  random.setSeed(random.getRandomSeed());
   console.log(random.getSeed());
 
   // const palette = random.pick(palettes).slice(0, 3);
   const palette = random.shuffle(random.pick(palettes)).slice(0, 4);
 
-  const margin = 100;
+  const margin = 0;
 
   const createGrid = () => {
     const points = [];
-    const count = 50;
+    const count = 40;
 
     for (let x = 0; x < count; x++) {
       for (let y = 0; y < count; y++) {
@@ -23,13 +25,17 @@ export const sketch = (ctx, width, height) => {
 
         const radius = Math.abs(random.noise2D(u, v) * 0.02);
         const rotation = random.noise2D(u, v);
+        const size = Math.abs(random.noise2D(u, v) * 100);
+        // const size = 20;
 
         points.push({
           position: [u, v],
           // radius: Math.abs(random.gaussian() * 0.01),
           radius,
           rotation,
-          colour: random.pick(palette),
+          size,
+          // colour: random.pick(palette),
+          colour: random.pick(palettes),
         });
       }
     }
@@ -42,23 +48,28 @@ export const sketch = (ctx, width, height) => {
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, width, height);
 
-  points.forEach(({ position: [u, v], radius, colour, rotation }) => {
+  points.forEach(({ position: [u, v], radius, colour, rotation, size }) => {
     const x = lerp(margin, width - margin, u);
     const y = lerp(margin, height - margin, v);
 
-    ctx.beginPath();
-    ctx.arc(x, y, radius * width, 0, degs(360), false);
-    ctx.fillStyle = colour;
-    ctx.lineWidth = 5;
-    ctx.fill();
+    ctx.globalCompositeOperation = "source-over";
 
-    // ctx.save();
-    // ctx.fillStyle = colour;
-    // ctx.font = `${radius * width * 2}px "Helvetica"`;
-    // ctx.translate(x, y);
-    // ctx.rotate(rotation);
-    // ctx.fillText("8====D~", 0, 0);
-    // ctx.restore();
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotation);
+
+    ctx.fillStyle = random.pick(colour);
+    ctx.fillRect(x - size / 2, y - size / 2, size, size);
+
+    ctx.fillStyle = random.pick(colour);
+    const layer2 = (2 * size) / 3;
+    ctx.fillRect(x - layer2 / 2, y - layer2 / 2, layer2, layer2);
+
+    ctx.fillStyle = random.pick(colour);
+    const layer3 = (1 * size) / 3;
+    ctx.fillRect(x - layer3 / 2, y - layer3 / 2, layer3, layer3);
+
+    ctx.restore();
   });
 };
 

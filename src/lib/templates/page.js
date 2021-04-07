@@ -8,7 +8,7 @@ const Page = ({ imgSrc, children, className = "" }) => {
     <div className={className}>
       {/* <div className="flex h-screen items-center content-center"> */}
       <NavBar />
-      <div className="flex flex-wrap container mx-auto h-full w-full pt-32  border-blue-200">
+      <div className="flex flex-wrap container mx-auto md:max-w-5xl h-full w-full pt-32 border-blue-200">
         {children}
       </div>
     </div>

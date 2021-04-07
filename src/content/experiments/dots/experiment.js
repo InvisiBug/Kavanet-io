@@ -49,8 +49,6 @@ export default class Experiment {
       });
     }
 
-    console.log(this.stars[0]);
-
     this.run(); // Start the simulation
   }
 
