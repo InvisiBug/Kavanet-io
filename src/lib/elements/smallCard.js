@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../";
+import { Button } from "..";
 
-const ThinCard = ({
+const SmallCard = ({
   imgSrc,
   title = "Title",
   description = "Description",
@@ -11,7 +11,7 @@ const ThinCard = ({
 }) => {
   return (
     <>
-      <div className="container flex w-72 mx-auto h-96 overflow-hidden my-10 justify-center items-center   border-blue-600 shadow-lg rounded-3xl">
+      <div className="container flex w-72 mx-auto h-96 overflow-hidden mt-10 justify-center items-center border-2  border-blue-600 shadow-lg rounded-3xl">
         <div className="flex flex-col w-full h-full  border-red-500">
           <img src={imgSrc} alt={imgSrc} className="object-cover h-1/2" />
           <div className="ml-5 flex flex-col h-full">
@@ -31,4 +31,4 @@ const ThinCard = ({
   );
 };
 
-export default ThinCard;
+export default SmallCard;
