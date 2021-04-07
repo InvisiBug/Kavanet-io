@@ -1,36 +1,45 @@
-import React, { useLayoutEffect, useRef } from "react";
-import GenArt from "./genart";
+import { sketch } from "./experiment";
+export default class canvasInterface {
+  containerSize;
 
-const Genart = () => {
-  const wrapperRef = useRef(null);
-  const canvasRef = useRef(null);
+  width;
+  height;
 
-  useLayoutEffect(() => {
-    // not happy with this section
-    start();
-    window.addEventListener("resize", () => {
-      start();
-    });
-  });
+  canvas;
+  canvasRef;
 
-  const start = () => {
-    const artpiece = new GenArt(wrapperRef, canvasRef);
-    artpiece.init();
-  };
+  wrapper;
+  wrapperRef;
 
-  return (
-    <>
-      <div className="h-full w-full border-white">
-        <div
-          ref={wrapperRef}
-          className="h-full w-full no-scrollbar " //! Required to make the canvas fit the page
-          // onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}
-        >
-          <canvas ref={canvasRef} />
-        </div>
-      </div>
-    </>
-  );
-};
+  ctx;
 
-export default Genart;
+  constructor(wrapperRef, canvasRef) {
+    this.canvas = canvasRef.current;
+    this.canvasRef = canvasRef;
+
+    this.wrapper = wrapperRef.current;
+    this.wrapperRef = wrapperRef;
+
+    this.ctx = this.canvas.getContext("2d");
+
+    [this.width, this.height] = [
+      this.wrapper.clientWidth,
+      this.wrapper.clientHeight,
+    ];
+  }
+
+  init(test = false) {
+    this.resizeCanvas();
+    if (test) {
+      this.ctx.fillStyle = "orange";
+      this.ctx.fillRect(0, 0, this.width, this.height);
+    } else {
+      sketch(this.ctx, this.width, this.height);
+    }
+  }
+
+  resizeCanvas() {
+    this.canvas.width = this.width;
+    this.canvas.height = this.height;
+  }
+}

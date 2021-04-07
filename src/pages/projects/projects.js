@@ -16,15 +16,13 @@ const Projects = () => {
     <>
       <Page>
         {list.map((item, index) => (
-          <>
-            <LargeCard
-              title={item.title}
-              imgSrc={item.image}
-              description={item.description}
-              to={item.to}
-              key={index}
-            />
-          </>
+          <LargeCard
+            title={item.title}
+            imgSrc={item.image}
+            description={item.description}
+            to={item.to}
+            key={index}
+          />
         ))}
       </Page>
     </>

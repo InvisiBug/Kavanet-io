@@ -1,29 +1,41 @@
-import React from "react";
-import Dots from "../../content/experiments/dots";
-import { NavBar, ExperimentsLayout } from "../../lib";
+import React, { useRef, useLayoutEffect } from "react";
+import experiment from "../../content/experiments/dots";
+import { ExperimentsLayout } from "../../lib";
 
-const dots = () => {
+const Dots = () => {
+  const wrapperRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  useLayoutEffect(() => {
+    start();
+    window.addEventListener("resize", () => {
+      start();
+    });
+  });
+
+  const start = () => {
+    const dots = new experiment(wrapperRef, canvasRef);
+    dots.init();
+  };
+
   return (
     <>
       <ExperimentsLayout
         darkLayer={true}
         background="bg-gradient-to-r from-blue-800 to-green-800"
       >
-        <Dots />
+        <div className="h-full w-full border-white">
+          <div
+            ref={wrapperRef}
+            className="h-full w-full no-scrollbar" //! Required to make the canvas fit the page
+            // onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}
+          >
+            <canvas ref={canvasRef} />
+          </div>
+        </div>
       </ExperimentsLayout>
     </>
   );
 };
 
-export default dots;
-
-{
-  /* <div className="flex h-screen bg-gradient-to-r from-blue-800 to-green-800 ">
-        <div className="inset-0 absolute bg-black opacity-20" />
-        <NavBar />
-
-        <div className="inset-0 absolute">
-          <Dots />
-        </div>
-      </div> */
-}
+export default Dots;

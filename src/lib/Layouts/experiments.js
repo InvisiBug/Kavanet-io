@@ -3,7 +3,7 @@ import { NavBar } from "..";
 
 const ExperimentsLayout = ({
   children,
-  background = "bg-blue-200",
+  background = "",
   darkLayer = false,
 }) => {
   return (

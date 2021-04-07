@@ -37,22 +37,13 @@ const Experiments = () => {
     <>
       <Page>
         {experimentList.map((experiment, index) => (
-          <>
-            <SmallCard
-              title={experiment.title}
-              imgSrc={experiment.image}
-              description={experiment.description}
-              to={experiment.to}
-              key={experiment.title}
-            />
-            {/* <ItemCard
-              title={experiment.title}
-              imgSrc={experiment.image}
-              description={experiment.description}
-              to={experiment.to}
-              key={experiment.title}
-            /> */}
-          </>
+          <SmallCard
+            title={experiment.title}
+            imgSrc={experiment.image}
+            description={experiment.description}
+            to={experiment.to}
+            key={experiment.title}
+          />
         ))}
       </Page>
     </>
