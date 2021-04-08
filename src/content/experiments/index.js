@@ -20,19 +20,19 @@ export const cards = [
     description: "My pixi playground",
   },
   {
+    title: "Animated Genart",
+    type: "small",
+    image: genArt,
+    to: "/experiments/genart",
+    description: "A placeholder for my first lot of genart",
+  },
+  {
     title: "Squares",
     type: "large",
     image: squares,
     to: "/experiments/squares",
     description:
       "A creative coding style image based around squares, inspired by a reddit post. Reload the page to generate a new pattern.",
-  },
-  {
-    title: "Animated Genart",
-    type: "small",
-    image: genArt,
-    to: "/experiments/genart",
-    description: "A placeholder for my first lot of genart",
   },
   {
     title: "Genart",

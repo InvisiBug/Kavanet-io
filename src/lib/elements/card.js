@@ -23,15 +23,15 @@ const Card = ({
   } else if (type === "large") {
     return (
       <>
-        <div className="container hidden sm:flex w-3/5">
-          <LargeCard
-            imgSrc={imgSrc}
-            title={title}
-            description={description}
-            buttonText={buttonText}
-            to={to}
-          />
-        </div>
+        {/* <div className="bg-red-200"> */}
+        <LargeCard
+          imgSrc={imgSrc}
+          title={title}
+          description={description}
+          buttonText={buttonText}
+          to={to}
+        />
+        {/* </div> */}
 
         {/* <div className="md:hidden bg-black mx-auto">
           <SmallCard

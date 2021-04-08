@@ -6,7 +6,7 @@ const Experiments = () => {
   return (
     <>
       <Page>
-        {cards.map((experiment) => (
+        {/* {cards.map((experiment) => (
           <Card
             title={experiment.title}
             imgSrc={experiment.image}
@@ -15,9 +15,9 @@ const Experiments = () => {
             key={experiment.title}
             type={experiment.type}
           />
-        ))}
+        ))} */}
 
-        {/* {cards.map((experiment) =>
+        {cards.map((experiment) =>
           experiment.type === "small" ? (
             <SmallCard
               title={experiment.title}
@@ -35,7 +35,7 @@ const Experiments = () => {
               key={experiment.title}
             />
           )
-        )} */}
+        )}
       </Page>
     </>
   );
