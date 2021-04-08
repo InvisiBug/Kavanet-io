@@ -16,6 +16,13 @@ const smallCards = [
   },
   {
     title: "Genart",
+    type: "large",
+    image: genArt,
+    to: "/experiments/genart",
+    description: "A placeholder for my first lot of genart",
+  },
+  {
+    title: "Animated Genart",
     type: "small",
     image: genArt,
     to: "/experiments/genart",
