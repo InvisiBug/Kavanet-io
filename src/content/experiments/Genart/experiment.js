@@ -3,25 +3,28 @@ import random from "canvas-sketch-util/random";
 import palettes from "nice-color-palettes";
 
 export const sketch = (ctx, width, height) => {
-  random.setSeed(316599);
-  // random.setSeed(random.getRandomSeed());
+  // random.setSeed(316599);
+  random.setSeed(random.getRandomSeed());
   console.log(random.getSeed());
 
   // const palette = random.pick(palettes).slice(0, 3);
   const palette = random.shuffle(random.pick(palettes)).slice(0, 4);
+  // const
 
   const margin = 100;
 
   const createGrid = () => {
     const points = [];
-    const count = 50;
 
-    for (let x = 0; x < count; x++) {
-      for (let y = 0; y < count; y++) {
-        const u = count <= 1 ? 0.5 : x / (count - 1); // Deals with low count numbers
-        const v = count <= 1 ? 0.5 : y / (count - 1);
+    const xCount = 250;
+    const yCount = 150;
 
-        const radius = Math.abs(random.noise2D(u, v) * 0.02);
+    for (let x = 0; x < xCount; x++) {
+      for (let y = 0; y < yCount; y++) {
+        const u = xCount <= 1 ? 0.5 : x / (xCount - 1); // Deals with low count numbers
+        const v = yCount <= 1 ? 0.5 : y / (yCount - 1);
+
+        const radius = Math.abs(random.noise2D(u, v) * 0.005);
         const rotation = random.noise2D(u, v);
 
         points.push({
@@ -39,6 +42,7 @@ export const sketch = (ctx, width, height) => {
   const points = createGrid().filter(() => random.value() > 0);
   // const points = createGrid();
 
+  // ctx.fillStyle = random.pick(palette);
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, width, height);
 
@@ -47,6 +51,7 @@ export const sketch = (ctx, width, height) => {
     const y = lerp(margin, height - margin, v);
 
     ctx.beginPath();
+
     ctx.arc(x, y, radius * width, 0, degs(360), false);
     ctx.fillStyle = colour;
     ctx.lineWidth = 5;

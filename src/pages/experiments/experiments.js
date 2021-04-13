@@ -2,6 +2,8 @@ import React from "react";
 import { Page, SmallCard, LargeCard, Card } from "../../lib";
 import { cards } from "../../content/experiments";
 
+// Todo, maybe use grid here
+
 const Experiments = () => {
   return (
     <>

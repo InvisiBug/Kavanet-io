@@ -5,19 +5,19 @@ import squares from "../../images/squares.png";
 
 export const cards = [
   {
-    title: "Star field",
-    type: "large",
-    image: bg2,
-    to: "/experiments/dots",
-    description:
-      "A class based canvas experiment creating randomly changing constellations.",
-  },
-  {
     title: "Pixi",
     type: "small",
     image: pixi,
     to: "/experiments/pixi",
     description: "My pixi playground",
+  },
+  {
+    title: "Star field",
+    type: "small",
+    image: bg2,
+    to: "/experiments/dots",
+    description:
+      "A class based canvas experiment creating randomly changing constellations.",
   },
   {
     title: "Animated Genart",
@@ -28,7 +28,7 @@ export const cards = [
   },
   {
     title: "Squares",
-    type: "large",
+    type: "small",
     image: squares,
     to: "/experiments/squares",
     description:
@@ -36,14 +36,14 @@ export const cards = [
   },
   {
     title: "Genart",
-    type: "large",
+    type: "small",
     image: genArt,
     to: "/experiments/genart",
     description: "A Super simple static gen art example.",
   },
   {
     title: "Mouse",
-    type: "large",
+    type: "small",
     image:
       "https://cdn.branchcms.com/QOxXen0yEK-1009/images/blog/cute-mouse.jpg",
     to: "/experiments/mouse",

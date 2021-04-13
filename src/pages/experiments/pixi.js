@@ -1,30 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import { Application, Loader } from "pixi.js";
+import * as PIXI from "pixi.js";
+import {
+  barImage,
+  ballImage,
+  wallImage,
+} from "../../content/experiments/pixi/images";
+import Game from "../../content/experiments/pixi";
 
-const Pixie = () => {
+const Pong = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    let app = new Application({
-      view: canvasRef.current,
-      width: 256,
-      height: 256,
-    });
-
-    app.renderer.backgroundColor = 0xccc;
-
-    console.log(app.renderer.view.height);
-    // app.renderer.resize(512, 512);
-
-    /* 
-      This is makes the app full screen
-      is good for now but wont work wen fully integrated
-      in to kavanet
-    */
-    app.renderer.view.style.position = "absolute";
-    app.renderer.view.style.display = "block";
-    app.renderer.autoResize = true;
-    app.renderer.resize(window.innerWidth, window.innerHeight);
+    const game = new Game(canvasRef.current);
+    game.setup();
   }, []);
 
   return (
@@ -34,4 +22,4 @@ const Pixie = () => {
   );
 };
 
-export default Pixie;
+export default Pong;

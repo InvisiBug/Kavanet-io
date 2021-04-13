@@ -12,7 +12,7 @@ export default class canvasInterface {
   wrapperRef;
 
   ctx;
-  mouse;
+  mouse = [];
 
   constructor(wrapperRef, canvasRef) {
     this.canvas = canvasRef.current;
@@ -27,7 +27,7 @@ export default class canvasInterface {
       this.wrapper.clientWidth,
       this.wrapper.clientHeight,
     ];
-    // this.canvas.addEventListener("mousemove", this.onMouseMove());
+    this.canvas.addEventListener("mouseMove", this.updateMouse());
   }
 
   init(test = false) {
@@ -46,7 +46,10 @@ export default class canvasInterface {
   }
 
   updateMouse(e) {
-    updateMouse(e);
+    console.log(e);
+    // thouse[1] = e.clientY;
+    // consolis.mouse[0] = e.clientX;
+    // this.me.log(this.mouse[0], this.mouse[1]);
   }
 
   // onMouseMove(e) {
@@ -58,3 +61,5 @@ export default class canvasInterface {
   //   // code(this.ctx, this.width, this.height, this.mouse);
   // }
 }
+
+// * Tim says use move too to stop the line from the top left
