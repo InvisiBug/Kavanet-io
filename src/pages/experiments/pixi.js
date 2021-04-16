@@ -12,7 +12,7 @@ const Pong = () => {
 
   useEffect(() => {
     const game = new Game(canvasRef.current);
-    game.setup();
+    // game.setup();
   }, []);
 
   return (
