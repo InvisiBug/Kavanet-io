@@ -228,13 +228,13 @@ function drawBricks() {
 function collisionDetection() {
   for (var c = 0; c < brickColumnCount; c++) {
     for (var r = 0; r < brickRowCount; r++) {
-      var b = bricks[c][r];
-      if (b.status == 1) {
+      var brick = bricks[c][r];
+      if (brick.status == 1) {
         if (
-          ballX > b.x &&
-          ballX < b.x + brickWidth &&
-          ballY > b.y &&
-          ballY < b.y + brickHeight
+          ballX > brick.x &&
+          ballX < brick.x + brickWidth &&
+          ballY > brick.y &&
+          ballY < brick.y + brickHeight
         ) {
           ballColour =
             "rgb(" +

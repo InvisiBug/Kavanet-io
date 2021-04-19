@@ -25,7 +25,7 @@ export default class Wall {
     stage.addChild(this.wall);
   }
 
-  getLocation = () => {
+  getInfo = () => {
     return {
       x: this.x,
       y: this.y,
@@ -33,4 +33,6 @@ export default class Wall {
       height: this.height,
     };
   };
+
+  setCollision = () => {};
 }

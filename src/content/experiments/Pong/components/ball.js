@@ -29,7 +29,8 @@ export default class Ball {
     return {
       x: this.ball.x,
       y: this.ball.y,
-      size: this.size,
+      width: this.size,
+      height: this.size,
     };
   };
 
@@ -44,7 +45,6 @@ export default class Ball {
     // Update ball location
     this.ball.x += this.vx;
     this.ball.y += this.vy;
-    console.log(this.vx);
   };
 
   setCollision = (val) => {
@@ -53,12 +53,12 @@ export default class Ball {
 
   collisionDetection = () => {
     if (this.collision) {
-      if (this.prevX < this.ball.x || this.prevX > 0) {
-        this.vx = -this.vx;
-      }
-      if (this.prevY < this.ball.y || this.prevY > 0) {
-        this.vy = -this.vy;
-      }
+      // if (this.prevX < this.ball.x || this.prevX > 0) {
+      this.vx = -this.vx;
+      // }
+      // if (this.prevY < this.ball.y || this.prevY > 0) {
+      this.vy = -this.vy;
+      // }
 
       this.collision = false;
     }
