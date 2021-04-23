@@ -10,7 +10,7 @@ export const code = (ctx, width, height) => {
   console.log(random.getSeed());
 
   // const palette = random.pick(palettes).slice(0, 3);
-  const palette = random.shuffle(random.pick(palettes)).slice(0, 4);
+  // const palette = random.shuffle(random.pick(palettes)).slice(0, 4);
 
   const margin = 0;
 
@@ -73,6 +73,6 @@ export const code = (ctx, width, height) => {
   });
 };
 
-const degs = (degs) => {
-  return (degs * Math.PI) / 180;
-};
+// const degs = (degs) => {
+//   return (degs * Math.PI) / 180;
+// };

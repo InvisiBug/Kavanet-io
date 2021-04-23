@@ -1,9 +1,5 @@
 export default class Ball {
-  constructor(
-    ctx,
-    options,
-    pos = [Math.random() * options.width, Math.random() * options.height]
-  ) {
+  constructor(ctx, options, pos = [Math.random() * options.width, Math.random() * options.height]) {
     this.options = options;
     this.ctx = ctx;
     this.size = (Math.random() * options.width) / 10;
@@ -21,13 +17,8 @@ export default class Ball {
 
     this.setPos(pos);
 
-    this.vx =
-      Math.floor(Math.random() * this.options.speed) - this.options.speed / 2;
-    this.vy =
-      Math.floor(Math.random() * this.options.speed) - this.options.speed / 2;
-
-    // this.vx = 0;
-    // this.vy = 0;
+    this.vx = Math.floor(Math.random() * this.options.speed) - this.options.speed / 2;
+    this.vy = Math.floor(Math.random() * this.options.speed) - this.options.speed / 2;
 
     this.draw();
   }
@@ -81,9 +72,7 @@ export default class Ball {
     this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 
     // Set colour based on collision event
-    this.ctx.fillStyle = this.isColliding
-      ? this.colour.collision
-      : this.colour.standard;
+    this.ctx.fillStyle = this.isColliding ? this.colour.collision : this.colour.standard;
     this.ctx.fill();
   };
 
@@ -133,11 +122,7 @@ export default class Ball {
   };
 
   detectObjects = () => {
-    if (
-      this.isColliding &&
-      this.isColliding !== "x" &&
-      this.isColliding !== "y"
-    ) {
+    if (this.isColliding && this.isColliding !== "x" && this.isColliding !== "y") {
       // if (this.colour == 0xffffff) {
       //   console.log("red");
       //   this.colour = 0xff0000;

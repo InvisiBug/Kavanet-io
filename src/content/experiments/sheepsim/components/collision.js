@@ -1,6 +1,6 @@
 export default class Collision {
-  constructor(options) {
-    this.options = options;
+  constructor(env) {
+    this.env = env;
   }
 
   detect = (entities) => {

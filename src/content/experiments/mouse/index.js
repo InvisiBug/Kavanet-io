@@ -1,4 +1,4 @@
-import { code, updateMouse } from "./code";
+import { code } from "./code";
 export default class canvasInterface {
   containerSize;
 
@@ -23,10 +23,12 @@ export default class canvasInterface {
 
     this.ctx = this.canvas.getContext("2d");
 
-    [this.width, this.height] = [
-      this.wrapper.clientWidth,
-      this.wrapper.clientHeight,
-    ];
+    // [this.width, this.height] = [
+    //   this.wrapper.clientWidth,
+    //   this.wrapper.clientHeight,
+    // ];
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     this.canvas.addEventListener("mouseMove", this.updateMouse());
   }
 
@@ -45,12 +47,12 @@ export default class canvasInterface {
     this.canvas.height = this.height;
   }
 
-  updateMouse(e) {
-    console.log(e);
-    // thouse[1] = e.clientY;
-    // consolis.mouse[0] = e.clientX;
-    // this.me.log(this.mouse[0], this.mouse[1]);
-  }
+  // updateMouse(e) {
+  //   console.log(e);
+  //   // thouse[1] = e.clientY;
+  //   // consolis.mouse[0] = e.clientX;
+  //   // this.me.log(this.mouse[0], this.mouse[1]);
+  // }
 
   // onMouseMove(e) {
   //   this.mouse = {

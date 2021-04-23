@@ -2,6 +2,7 @@ import bg2 from "../../images/dots.png";
 import genArt from "../../images/genArt.png";
 import pixi from "../../images/bg3.png";
 import squares from "../../images/squares.png";
+import sheep from "../../images/sheep.png";
 
 export const cards = [
   {
@@ -9,8 +10,7 @@ export const cards = [
     type: "small",
     image: bg2,
     to: "/experiments/dots",
-    description:
-      "A class based canvas experiment creating randomly changing constellations.",
+    description: "A class based canvas experiment creating randomly changing constellations.",
   },
   {
     title: "Pixi",
@@ -26,6 +26,13 @@ export const cards = [
     to: "/experiments/pure",
     description: "A Super simple static gen art example.",
   },
+  {
+    title: "Sheep Sim",
+    type: "small",
+    image: sheep,
+    to: "/experiments/sheepsim",
+    description: "Elizas Sheep Sim.",
+  },
   // {
   //   title: "Animated Genart",
   //   type: "small",
@@ -38,8 +45,7 @@ export const cards = [
     type: "small",
     image: squares,
     to: "/experiments/squares",
-    description:
-      "A creative coding style image based around squares, inspired by a reddit post. Reload the page to generate a new pattern.",
+    description: "A creative coding style image based around squares, inspired by a reddit post. Reload the page to generate a new pattern.",
   },
   {
     title: "Random Genart",

@@ -1,24 +1,15 @@
 import React from "react";
-import { Button, SmallCard } from "..";
+import { Button } from "..";
 
-const LargeCard = ({
-  imgSrc,
-  title = "Title",
-  description = "Description",
-  buttonText = "Open",
-  to = "",
-  readyToShow = "false",
-}) => {
+const LargeCard = ({ imgSrc, title = "Title", description = "Description", buttonText = "Open", to = "", readyToShow = "false" }) => {
   const point = 2;
-  if (point == 1) {
+  if (point === 1) {
     return (
       <>
         <div className="flex items-center mt-10 mx-auto p-10 w-3/5 h-96 dark:bg-gray-600 border border-gray-100 rounded-3xl shadow-lg md:max-w-5xl lg:max-w-2xl">
           <div className="grid gap-1 grid-flow-col grid-cols-2 grid-rows-3 w-full h-full border-pink-500 overflow-hidden">
             {/* <div class="col-start-1 bg-indigo-700">1</div> */}
-            <h1 className="font-bebas-neue col-start-1 text-4xl font-black border-black uppercase">
-              {title}
-            </h1>
+            <h1 className="font-bebas-neue col-start-1 text-4xl font-black border-black uppercase">{title}</h1>
 
             {/* <div class="col-start-1 row-end-3 bg-indigo-700">2</div> */}
             <div className="flex col-start-1 row-end-3 items-end my-5 border-yellow-700 lg:w-3/4">
@@ -43,20 +34,16 @@ const LargeCard = ({
         </div>
       </>
     );
-  } else if (point == 2) {
+  } else if (point === 2) {
     return (
       <>
         <div className="flex items-center mt-10 mx-auto w-3/5 h-96 dark:bg-gray-600 border border-gray-200 rounded-3xl shadow-lg md:max-w-2xl">
           <div className="flex m-10 h-3/5">
             <div className="flex items-center w-full h-full border-pink-500">
               <div className="flex flex-col flex-grow justify-around h-full border-green-500">
-                <h1 className="font-bebas-neue text-4xl font-black border-black uppercase">
-                  {title}
-                </h1>
+                <h1 className="font-bebas-neue text-4xl font-black border-black uppercase">{title}</h1>
 
-                <p className="flex-grow my-5 border-yellow-700 lg:w-3/4">
-                  {description}
-                </p>
+                <p className="flex-grow my-5 border-yellow-700 lg:w-3/4">{description}</p>
 
                 <div className="border-black lg:w-3/4">
                   <Button to={to} clickable="false" className="my-5">
@@ -80,7 +67,7 @@ const LargeCard = ({
         {/* </div> */}
       </>
     );
-  } else if (point == 3) {
+  } else if (point === 3) {
     return (
       <>
         <div className="flex items-center mt-10 mx-auto w-3/5 h-96 dark:bg-gray-600 border border-black rounded-3xl shadow-lg md:max-w-2xl">
@@ -107,18 +94,14 @@ const LargeCard = ({
         {/* </div> */}
       </>
     );
-  } else if (point == 4) {
+  } else if (point === 4) {
     return (
       <div className="container flex items-center mt-10 mx-auto w-3/5 h-96 dark:bg-gray-600 border border-gray-100 rounded-3xl shadow-lg md:max-w-5xl">
         <div className="flex items-center m-10 w-full border-2 border-pink-500">
           <div className="w-full border-2 border-green-500 md:w-7/12">
-            <h1 className="font-bebas-neue mt-10 text-4xl font-black border-2 border-black uppercase">
-              {title}
-            </h1>
+            <h1 className="font-bebas-neue mt-10 text-4xl font-black border-2 border-black uppercase">{title}</h1>
 
-            <p className="my-5 w-full border-2 border-yellow-700 lg:w-3/4">
-              {description}
-            </p>
+            <p className="my-5 w-full border-2 border-yellow-700 lg:w-3/4">{description}</p>
 
             <div className="border-2 border-black lg:w-3/4">
               <Button to={to} clickable="false" className="my-5">
@@ -128,11 +111,7 @@ const LargeCard = ({
           </div>
 
           <div className="max-w-1/2 hidden flex-grow h-full border-2 border-yellow-500 md:block">
-            <img
-              src={imgSrc}
-              alt={imgSrc}
-              className="block mx-auto max-w-xs max-h-64 border-2 border-black rounded-md md:max-w-sm"
-            />
+            <img src={imgSrc} alt={imgSrc} className="block mx-auto max-w-xs max-h-64 border-2 border-black rounded-md md:max-w-sm" />
           </div>
         </div>
       </div>
@@ -141,39 +120,3 @@ const LargeCard = ({
 };
 
 export default LargeCard;
-
-{
-  /* <div className="container flex w-3/5 h-96 mt-10 mx-auto  items-center md:max-w-5xl dark:bg-gray-600 border border-gray-100 shadow-lg rounded-3xl">
-        <div className="flex m-10 w-full items-center  border-pink-500">
-          <div className="md:w-7/12 w-full  border-green-500">
-            <h1 className="text-4xl mt-10 font-bebas-neue uppercase font-black border-black">
-              {title}
-            </h1>
-
-            <p className=" border-yellow-700 my-5 w-full lg:w-3/4">
-              {description}
-            </p>
-
-            <div className="lg:w-3/4 border-black ">
-              <Button to={to} clickable="false" className="my-5 ">
-                {buttonText}
-              </Button>
-            </div>
-          </div>
-
-         
-            Currently not happy with how the image looks
-            cant make it scale to fit container          
-       
-          <div className="hidden md:block flex-grow h-full max-w-1/2  border-yellow-500 ">
-       
-            <img
-              src={imgSrc}
-              alt={imgSrc}
-              className="block max-h-64 mx-auto max-w-xs md:max-w-sm rounded-md border-black"
-            />
-       
-          </div>
-        </div>
-      </div> */
-}
