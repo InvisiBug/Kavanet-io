@@ -18,8 +18,8 @@ export default class Grass {
     for (let y = 0; y < this.env.gridSize; y++) {
       this.grass[y] = new Array();
       for (let x = 0; x < this.env.gridSize; x++) {
-        this.grass[y].push(this.getRandomInt(0, 4));
-        // this.grass[y].push(0);
+        // this.grass[y].push(this.getRandomInt(0, 4));
+        this.grass[y].push(4);
       }
     }
   };
@@ -46,7 +46,12 @@ export default class Grass {
         const v = y / (this.env.gridSize - 1);
 
         this.ctx.fillStyle = this.getColour(this.grass[x][y]);
-        this.ctx.fillRect(lerp(0, this.env.width, u) - this.size / 2, lerp(0, this.env.height, v) - this.size / 2, this.size, this.size);
+        this.ctx.fillRect(
+          this.env.marginX + lerp(0, this.env.height, u) - this.size / 2,
+          lerp(0, this.env.height, v) - this.size / 2,
+          this.size,
+          this.size
+        );
       }
     }
   };

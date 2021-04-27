@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { ExperimentsLayout } from "../../lib";
 import Sim from "../../content/experiments/collisionDetection/pure";
 
 const Pure = () => {
@@ -10,7 +11,9 @@ const Pure = () => {
 
   return (
     <>
-      <canvas ref={canvasRef} />
+      <ExperimentsLayout>
+        <canvas ref={canvasRef} />
+      </ExperimentsLayout>
     </>
   );
 };

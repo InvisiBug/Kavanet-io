@@ -6,11 +6,13 @@ export default class Sim {
   env = {
     width: window.innerWidth,
     height: window.innerHeight,
+    marginX: (window.innerWidth - window.innerHeight) / 2,
+    // marginX: window.innerHeight,
     // width: 350,
     // height: 350,
     bgColour: "rgba(25, 25, 25)",
     speed: 1,
-    fps: 20,
+    fps: 10,
     moveDistance: 1,
     gridSize: 25,
   };
@@ -25,6 +27,7 @@ export default class Sim {
     this.ctx = this.canvas.getContext("2d");
 
     this.setup();
+    console.log(this.env.marginX);
   }
 
   setup = () => {

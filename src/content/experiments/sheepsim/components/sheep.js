@@ -55,7 +55,8 @@ export default class Sheep {
     const u = this.x / (this.env.gridSize - 1);
     const v = this.y / (this.env.gridSize - 1);
 
-    this.ctx.arc(lerp(0, this.env.width, u), lerp(0, this.env.height, v), this.size, 0, Math.PI * 2);
+    // Dirty hack to make the canvas a square
+    this.ctx.arc(this.env.marginX + lerp(0, this.env.height, u) - this.size / 2, lerp(0, this.env.height, v), this.size, 0, Math.PI * 2);
 
     this.ctx.fillStyle = this.life > 0 ? "black" : "rgba(255,255,255,0.2)";
     this.ctx.fill();
