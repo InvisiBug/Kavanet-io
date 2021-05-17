@@ -20,12 +20,7 @@ export default class Habitat {
 
     // This size here is used to set the width of the board
     // it is terrible, fix it
-    // console.log(this.env);
-
-    // console.log((env.width - env.marginX * 2) / env.gridSize);
     this.size = (env.width - env.marginX * 2) / env.gridSize;
-    // console.log(this.size);
-    // this.size = 10;
 
     this.habitat = new HabitatGenerator(env, elizasHabitat).habitat;
     // this.createRandomHabitat();
@@ -82,7 +77,7 @@ export default class Habitat {
   };
 
   getHabitatColour = (habitat) => {
-    const colours = ["#c9c9c9", "#666B3A", "#ADAB76", "#B05449"];
+    const colours = ["#aaaaaa", "#666B3A", "#ADAB76", "#B05449"];
     return colours[habitat];
   };
 }

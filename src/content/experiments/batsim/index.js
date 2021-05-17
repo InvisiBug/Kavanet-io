@@ -13,7 +13,7 @@ export default class Sim {
     // height: 350,
     bgColour: "rgba(25, 25, 25)",
     speed: 1,
-    fps: 5,
+    fps: 15,
     moveDistance: 1,
     gridSize: 100,
   };
@@ -65,7 +65,7 @@ export default class Sim {
       this.tickables.forEach((ticker) => {
         ticker.tick(this.bats);
       });
-      this.printStats();
+      // this.printStats();
       this.lastTimestamp = this.timestamp;
     }
 

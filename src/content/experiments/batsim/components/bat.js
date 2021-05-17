@@ -109,28 +109,6 @@ export default class Bats {
     }
   };
 
-  checkForBat = (bats) => {
-    for (let i = 0; i < bats.length; i++) {
-      if (!(bats[i].getInfo().id == this.id)) {
-        if (bats[i].alive) {
-          this.competeWithOtherBat(bats[i].getInfo());
-        }
-      }
-    }
-  };
-
-  competeWithOtherBat = (competitor) => {
-    const fightWeighting = [0, 9, 14, 11];
-
-    // if the two bats are at the same location, enter the arena
-    if (this.x === competitor.x && this.y === competitor.y) {
-      if (getRandomInt(0, fightWeighting[this.species]) < getRandomInt(0, fightWeighting[competitor.species])) {
-        console.log("Bat dies");
-        this.alive = false;
-      }
-    }
-  };
-
   checkForSuitableNest = () => {
     if (this.habitat.getHabitat(this.x, this.y) === this.species) {
       return true;
@@ -153,5 +131,21 @@ export default class Bats {
     // this.ctx.fillStyle = this.species === 1 ? "#5C4881" : this.species === 2 ? "#584B45" : this.species === 3 ? "#38607A" : "#ffffff";
     this.ctx.fillStyle = this.species === 1 ? "#A51401" : this.species === 2 ? "#FBFB39" : this.species === 3 ? "#081CA1" : "#ffffff";
     this.ctx.fill();
+  };
+
+  detectWalls = () => {
+    if (this.x < 0) {
+      // Left Edge
+      this.x = 0;
+    } else if (this.x > this.env.gridSize - 1) {
+      // Right Edge
+      this.x = this.env.gridSize - 1;
+    } else if (this.y < 0) {
+      // Top Edge
+      this.y = 0;
+    } else if (this.y > this.env.gridSize - 1) {
+      // Bottom Edge
+      this.y = this.env.gridSize - 1;
+    }
   };
 }

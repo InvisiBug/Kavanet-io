@@ -119,6 +119,10 @@ export default class Cats {
     }
   };
 
+  /*
+    Choose a new place to move to
+    Check to make sure its not off the edge, an unwanted habitat
+  */
   move = () => {
     let validMove = false;
     let counter = 0;
@@ -133,22 +137,15 @@ export default class Cats {
       if (this.avoidEdges(newX, newY)) {
         // console.log(newX, newY);
         if (this.avoidBadHabitats(newX, newY)) {
-          if (this.buildingFound) {
-            if (this.searchForBuildings(newX, newY)) {
-              // console.log("Valid Move");
+          if (this.searchForBuildings(newX, newY)) {
+            // console.log("Valid Move");
 
-              this.buildingFound = true;
-              this.x = newX;
-              this.y = newY;
-              validMove = true;
-            } else {
-              // console.log("Bad Move: Too far from building");
-            }
-          } else {
-            if (this.searchForBuildings(newX, newY)) this.buildingFound = true;
+            this.buildingFound = true;
             this.x = newX;
             this.y = newY;
             validMove = true;
+          } else {
+            // console.log("Bad Move: Too far from building");
           }
           // console.log("not a building");
         } else {
