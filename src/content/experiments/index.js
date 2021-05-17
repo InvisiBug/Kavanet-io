@@ -20,6 +20,13 @@ export const cards = [
   //   description: "My pixi playground",
   // },
   {
+    title: "Batsim",
+    type: "small",
+    image: "https://www.clipartkey.com/mpngs/m/11-119060_cute-bat-clip-art.png",
+    to: "/experiments/batsim",
+    description: "A bat nesting habit simulator based on Elizas second python assignment",
+  },
+  {
     title: "Polygon",
     type: "small",
     image: genArt,
@@ -38,7 +45,7 @@ export const cards = [
     type: "small",
     image: sheep,
     to: "/experiments/sheepsim",
-    description: "Elizas Sheep Sim.",
+    description: "A sheed eating grass simulator based on Elizas first python assignment",
   },
   // {
   //   title: "Animated Genart",
