@@ -87,8 +87,8 @@ export default class Bats {
     if (this.alive) {
       if (!this.nest) {
         this.setPos([
-          this.x + random.pick([-this.env.moveDistance, this.env.moveDistance]),
-          this.y + random.pick([-this.env.moveDistance, this.env.moveDistance]),
+          this.x + random.pick([-this.env.moveDistance, 0, this.env.moveDistance]),
+          this.y + random.pick([-this.env.moveDistance, 0, this.env.moveDistance]),
         ]);
 
         //* Pushes a bat back on the screen if it tries to wander off

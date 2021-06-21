@@ -1,19 +1,16 @@
 import Bat from "./components/bat.js";
 import Habitat from "./components/habitat.js";
 import Cat from "./components/cat";
+import Hawk from "./components/hawk";
 
 export default class Sim {
   env = {
     width: window.innerWidth,
     height: window.innerHeight,
     marginX: (window.innerWidth - window.innerHeight) / 2,
-    // marginX: 0,
-    // marginX: window.innerHeight,
-    // width: 350,
-    // height: 350,
     bgColour: "rgba(25, 25, 25)",
     speed: 1,
-    fps: 15,
+    fps: 10,
     moveDistance: 1,
     gridSize: 100,
   };
@@ -26,8 +23,9 @@ export default class Sim {
   runNumber = 0;
 
   //* Model Variables
-  numBats = 500;
-  numCats = 100;
+  numBats = 1;
+  numCats = 1;
+  numHawks = 1;
 
   constructor(canvasRef) {
     this.canvas = canvasRef;
@@ -42,6 +40,11 @@ export default class Sim {
 
     this.habitat = new Habitat(this.ctx, this.env, true);
     this.tickables.push(this.habitat);
+
+    for (let i = 0; i < this.numHawks; i++) {
+      const hawk = new Hawk(this.ctx, this.env, this.habitat, [47, 43]);
+      this.tickables.push(hawk);
+    }
 
     for (let i = 0; i < this.numCats; i++) {
       const cat = new Cat(this.ctx, this.env, this.habitat, [47, 43]); //47,43

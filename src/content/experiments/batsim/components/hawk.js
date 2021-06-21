@@ -10,9 +10,9 @@ import { getRandomInt } from "../../helpers";
   3 => buildings #38607A
 */
 
-export default class Cats {
+export default class Hawk {
   runNumber = 0;
-  lookAroundSize = 2; // This is a symetrical distance from the current x,y coord
+  lookAroundSize = 4; // This is a symetrical distance from the current x,y coord
   buildingFound = false;
 
   constructor(ctx, env, habitat, pos = [random.rangeFloor(0, env.gridSize - 1), random.rangeFloor(0, env.gridSize - 1)]) {
@@ -30,9 +30,10 @@ export default class Cats {
     this.lastTimestamp = 0;
 
     // this.setPos([99, 45]);
-    this.findTileNearHouse();
+    // this.findTileNearHouse();
     // this.setPos(pos);
-    // this.get0tile();
+    // this.findDeepWoodland();
+    this.get0tile();
 
     // this.draw();
   }
@@ -43,7 +44,7 @@ export default class Cats {
   };
 
   /*
-    Chooses a location at random until the tile has a value of 0
+    Chooses a location at random until it finds one with a value of 0
     then moves to that location
   */
   get0tile = () => {
@@ -63,19 +64,21 @@ export default class Cats {
     } while (validMove != true);
   };
 
-  /* 
-    Choose a location
-    Check to see if its near a building
-    Move there if it is
-    Chose another location and check again if not
+  /*
+    Chooses a location at random until it finds some woodland
+    then moves to the location
   */
-  findTileNearHouse = () => {
+  findDeepWoodland = () => {
     let validMove = false;
     do {
       let newX = random.rangeFloor(0, this.env.gridSize - 1);
       let newY = random.rangeFloor(0, this.env.gridSize - 1);
 
-      if (this.searchForBuildingProximity(newX, newY)) {
+      if (
+        this.habitat.getHabitat(newX, newY) != woodlandEdge &&
+        this.habitat.getHabitat(newX, newY) != buildings &&
+        this.habitat.getHabitat(newX, newY) != 0
+      ) {
         this.setPos([newX, newY]);
         validMove = true;
       }
@@ -96,7 +99,7 @@ export default class Cats {
 
   tick = (bats) => {
     this.move();
-    this.checkAndEatBat(bats);
+    // this.checkAndEatBat(bats);
     this.draw();
   };
 
@@ -134,19 +137,26 @@ export default class Cats {
 
       if (this.avoidEdges(newX, newY)) {
         if (this.avoidBadHabitats(newX, newY)) {
-          if (this.searchForBuildingProximity(newX, newY)) {
-            this.buildingFound = true;
-            this.x = newX;
-            this.y = newY;
-            validMove = true;
-          }
+          // if (!this.searchForBuildingProximity(newX, newY)) {
+          // if (true) {
+          console.log(this.searchForBuildingProximity(newX, newY));
+          // this.buildingFound = true;
+          this.x = newX;
+          this.y = newY;
+          validMove = true;
+          // }
+          // }
         }
       }
     } while (validMove != true);
   };
 
   avoidBadHabitats = (newX, newY) => {
-    return this.habitat.getHabitat(newX, newY) != buildings && this.habitat.getHabitat(newX, newY) != woodland;
+    const val =
+      this.habitat.getHabitat(newX, newY) != buildings &&
+      this.habitat.getHabitat(newX, newY) != woodlandEdge &&
+      this.habitat.getHabitat(newX, newY) != woodlandEdge;
+    return val;
   };
 
   /*
@@ -184,7 +194,8 @@ export default class Cats {
     this.ctx.arc(this.env.marginX + lerp(0, this.env.height, u) - this.size / 2, lerp(0, this.env.height, v), this.size, 0, Math.PI * 2);
 
     // this.ctx.fillStyle = "#AC6200";
-    this.ctx.fillStyle = "#fff";
+    // this.ctx.fillStyle = "#fff";
+    this.ctx.fillStyle = "#FCEB0B";
     this.ctx.fill();
   };
 }

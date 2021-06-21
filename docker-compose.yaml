@@ -1,11 +1,11 @@
-version: "3" 
+version: "3"
 services: # Not the same as Kubernetes service
   kavanet.io: # Service name
     container_name: kavanet.io
     build: # Command
-      context: ../ # This folder on the left
-      dockerfile: ./docker/Dockerfile
+      context: . # This folder on the left
+      dockerfile: ./Dockerfile
     image: kavanet.io
     hostname: kavanet.io
-    ports: 
+    ports:
       - "80:80"

@@ -5,7 +5,7 @@ import { getRandomInt } from "../../helpers";
 
 /* 
   Habitat types
-  0 =>"#c9c9c9" => Not a roosting site
+  0 =>"#aaaaaa" => Not a roosting site
   1 => #666B3A" => Woodland
   2 =>"#ADAB76" => Woodland edge
   3 =>"#B05449" => Building
