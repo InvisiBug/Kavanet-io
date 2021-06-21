@@ -1,4 +1,4 @@
-import { code, updateMouse } from "./code";
+import { code } from "./code";
 export default class canvasInterface {
   containerSize;
 
@@ -12,7 +12,7 @@ export default class canvasInterface {
   wrapperRef;
 
   ctx;
-  mouse;
+  mouse = [];
 
   constructor(wrapperRef, canvasRef) {
     this.canvas = canvasRef.current;
@@ -23,11 +23,13 @@ export default class canvasInterface {
 
     this.ctx = this.canvas.getContext("2d");
 
-    [this.width, this.height] = [
-      this.wrapper.clientWidth,
-      this.wrapper.clientHeight,
-    ];
-    // this.canvas.addEventListener("mousemove", this.onMouseMove());
+    // [this.width, this.height] = [
+    //   this.wrapper.clientWidth,
+    //   this.wrapper.clientHeight,
+    // ];
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+    this.canvas.addEventListener("mouseMove", this.updateMouse());
   }
 
   init(test = false) {
@@ -45,9 +47,12 @@ export default class canvasInterface {
     this.canvas.height = this.height;
   }
 
-  updateMouse(e) {
-    updateMouse(e);
-  }
+  // updateMouse(e) {
+  //   console.log(e);
+  //   // thouse[1] = e.clientY;
+  //   // consolis.mouse[0] = e.clientX;
+  //   // this.me.log(this.mouse[0], this.mouse[1]);
+  // }
 
   // onMouseMove(e) {
   //   this.mouse = {
@@ -58,3 +63,5 @@ export default class canvasInterface {
   //   // code(this.ctx, this.width, this.height, this.mouse);
   // }
 }
+
+// * Tim says use move too to stop the line from the top left

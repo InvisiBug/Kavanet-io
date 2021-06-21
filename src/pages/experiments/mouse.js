@@ -21,16 +21,16 @@ const Mouse = () => {
 
   return (
     <ExperimentsLayout background="bg-white">
-      <div className="h-full w-full pt-16 border-white">
+      {/* <div className="pt-16 w-full h-full border-white">
         <div
           ref={wrapperRef}
-          className="h-full w-full no-scrollbar " //! Required to make the canvas fit the page
-          // onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}
-          onMouseMove={(e) => canvasBoard.updateMouse(e)}
-        >
-          <canvas ref={canvasRef} />
-        </div>
-      </div>
+          className="no-scrollbar w-full h-full" //! Required to make the canvas fit the page
+          onMouseMove={(e) => console.log("X", e.clientX, "Y", e.clientY)}
+          // onMouseMove={(e) => canvasBoard.updateMouse(e)}
+        > */}
+      <canvas ref={canvasRef} />
+      {/* </div> */}
+      {/* </div> */}
     </ExperimentsLayout>
   );
 };

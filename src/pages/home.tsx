@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <>
       <Page>
-        <div className="container  border-black">
+        <div className="container border-black">
           <div>
-            <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-gray-800 leading-tight mt-4 text-shadow-lg">
+            <h1 className="text-shadow-lg mt-4 text-center text-gray-800 text-7xl font-extrabold leading-tight sm:text-8xl">
               Projects
             </h1>
 
@@ -24,7 +24,7 @@ const Home = () => {
           </div>
 
           <div>
-            <h1 className="font-extrabold text-7xl text-center  sm:text-8xl text-gray-800 leading-tight mt-4 text-shadow-lg">
+            <h1 className="text-shadow-lg mt-4 text-center text-gray-800 text-7xl font-extrabold leading-tight sm:text-8xl">
               Experiments
             </h1>
 

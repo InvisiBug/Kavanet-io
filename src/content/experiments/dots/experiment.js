@@ -14,10 +14,6 @@ var system = {
 // f_b.add(system, "speed", 30, 100);
 
 export default class Experiment {
-  ctx;
-  width;
-  height;
-
   starColour = "white";
   lineColour = "white";
 
