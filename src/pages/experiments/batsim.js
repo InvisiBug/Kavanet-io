@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import Sim from "../../content/experiments/batsim";
+// import Sim from "../../content/experiments/batsim";
+import Sim from "../../Simulations/src/batsim/index";
 import { ExperimentsLayout } from "../../lib";
 
 const BatSim = () => {

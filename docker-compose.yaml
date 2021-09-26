@@ -8,4 +8,4 @@ services: # Not the same as Kubernetes service
     image: kavanet.io
     hostname: kavanet.io
     ports:
-      - "80:80"
+      - 80:80
